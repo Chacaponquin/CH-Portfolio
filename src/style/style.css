@@ -1,0 +1,759 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+    box-sizing: border-box;
+}
+
+ ::after,
+ ::before {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ :root {
+    --bg-dark-color: #1F1F1F;
+    --second-color: rgb(247, 247, 119);
+    --bg-light-color: white;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-dark-color);
+}
+
+.appContainer>*:not(.projects_container, .skills_container, .projectSelectContainer) {
+    opacity: 0.2;
+    transform: translateY(30%);
+    animation: showEffect 2s ease forwards;
+}
+
+.projects_container>* {
+    opacity: 0.2;
+    transform: translateY(20%);
+    animation: showEffect 1s ease forwards;
+}
+
+.skills_header>* {
+    opacity: 0.2;
+    transform: translateY(30%);
+    animation: showEffect 1s ease forwards;
+}
+
+.skill_select>* {
+    opacity: 0.2;
+    transform: translateY(30%);
+    animation: showEffect 1s ease forwards;
+}
+
+.projectSelectContainer>* {
+    opacity: 0.2;
+    transform: translateY(15%);
+    animation: showEffect 1.5s ease forwards;
+}
+
+.nav_bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    z-index: 80;
+}
+
+.languageSelector {
+    display: flex;
+    border: 1px solid white;
+    padding: 5px 20px;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    transition: 0.4s ease all;
+}
+
+.languageSelector:hover {
+    color: var(--bg-dark-color);
+    background-color: white;
+}
+
+.languageSelector>p {
+    margin-right: 20px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.languageSelector>img {
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.nav_bar>div {
+    display: flex;
+}
+
+.nav_bar>div>input {
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s ease all;
+}
+
+.contactMe {
+    position: absolute;
+    display: flex;
+    padding: 10px;
+    border: 1px solid white;
+    transform: translate(-90%, 50%);
+}
+
+.contactSVG {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+    fill: white;
+    margin: 0px 15px;
+    cursor: pointer;
+    transition: 0.4s ease all;
+}
+
+.contactSVG:hover {
+    transform: scale(1.2);
+}
+
+.header {
+    margin-top: 40px;
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+}
+
+.header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--bg-dark-color);
+    border: 1px solid white;
+}
+
+.header_image_container {
+    display: flex;
+    width: 100%;
+    height: 400px;
+}
+
+.header_image_container>div {
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    border: 1px solid white;
+    z-index: -12;
+    transform: translate(5%, 4%);
+}
+
+.header_text {
+    align-self: center;
+}
+
+.header_textFirst {
+    color: white;
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: 300;
+}
+
+.header_textSecond {
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    word-spacing: -15px;
+}
+
+.header_textThrid {
+    margin-top: 5px;
+    font-size: 17px;
+    color: white;
+}
+
+.options_container {
+    margin-top: 70px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+    width: 150px;
+    color: white;
+    border: 1px solid white;
+    margin: 0px 70px;
+    cursor: pointer;
+    transition: 0.4s ease all;
+}
+
+.projectSelectContainer {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.projectSelect {
+    display: flex;
+    width: 630px;
+    border: 1px solid white;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectSelect>img {
+    width: 100%;
+    object-fit: cover;
+    height: 270px;
+}
+
+.projectSelect>h1 {
+    color: white;
+    padding: 10px 0px;
+    font-size: 40px;
+}
+
+.projectSelectInf {
+    width: 100%;
+    padding: 0px 20px;
+    color: white;
+    font-size: 17px;
+}
+
+.projectSelectActions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tecInfSection {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.inputRedirectSection {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+}
+
+.tecInfSection>li {
+    font-size: 25px;
+}
+
+.inputRedirect {
+    width: 170px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    margin: 15px 0px;
+    font-size: 16px;
+    transition: all ease 0.4s;
+    fill: white;
+}
+
+.inputRedirect .contactSVG {
+    transform: scale(1);
+}
+
+.inputRedirect:hover {
+    fill: var(--bg-dark-color);
+}
+
+.inputRedirect .contactSVG {
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    margin-right: 15px;
+    fill: inherit;
+    border: none;
+}
+
+.projects_container {
+    display: grid;
+    width: 85%;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+}
+
+.project {
+    justify-self: center;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    max-width: 370px;
+    border: 1px solid white;
+    margin: 0px 50px 70px 50px;
+    transition: 0.4s ease all;
+    cursor: pointer;
+}
+
+.projects_container :nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.projects_container :nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+.projects_container :nth-child(4) {
+    animation-delay: 1.8s;
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project_title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 22px;
+    color: white;
+}
+
+.project_description {
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.skills_container {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    width: 85%;
+}
+
+.skills_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.skillSVG {
+    margin-bottom: 20px;
+    fill: white;
+    cursor: pointer;
+}
+
+.skillSVG>* {
+    pointer-events: none;
+}
+
+.skill_select {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+}
+
+.skill_select_text {
+    color: white;
+    width: 70%;
+    text-align: center;
+}
+
+.nav_bar>div>input:hover,
+.contactMeSelect,
+.option:hover,
+.option-select,
+.inputRedirect:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+.light .header_image_container>img {
+    border: 1px solid var(--bg-dark-color) !important;
+    background-color: white !important;
+}
+
+.light {
+    background-color: var(--bg-light-color) !important;
+}
+
+.light .project_description,
+.light .project_title,
+.light .option,
+.light .header_textThrid,
+.light .header_textFirst,
+.light .header_textSecond,
+.light .nav_bar>div>input,
+.light .languageSelector,
+.light .skill_select_text,
+.light .tecInfSection,
+.light .inputRedirect,
+.light .projectSelect>h1,
+.light .projectSelectInf {
+    color: var(--bg-dark-color);
+}
+
+.light .contactSVG {
+    background-color: var(--bg-dark-color);
+}
+
+.light .project,
+.light .option,
+.light .header_image_container>div,
+.light .contactSVG,
+.light .contactMe,
+.light .nav_bar>div>input,
+.light .languageSelector,
+.light .inputRedirect,
+.light .projectSelect {
+    border: 1px solid var(--bg-dark-color) !important;
+}
+
+.light .languageSelector:hover,
+.light .nav_bar>div>input:hover,
+.light .contactMeSelect,
+.light .option:hover,
+.light .option-select,
+.light .inputRedirect:hover {
+    color: white !important;
+    background-color: var(--bg-dark-color) !important;
+}
+
+.light .inputRedirect:hover {
+    fill: white;
+}
+
+@keyframes showEffect {
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header_textFirst,
+    .header_textThrid {
+        font-size: 13px;
+    }
+    .header_textSecond {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .header_textFirst,
+    .header_textThrid {
+        font-size: 12px;
+    }
+    .header_textSecond {
+        font-size: 40px;
+    }
+    .project {
+        width: 300px;
+    }
+    .project_description {
+        font-size: 11px;
+    }
+    .projectSelect {
+        width: 580px;
+    }
+    .projectSelect>h1 {
+        font-size: 32px;
+    }
+    .projectSelectInf {
+        font-size: 15px;
+    }
+    .tecInfSection>li {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        grid-template-columns: 1fr 250px;
+    }
+    .header_image_container {
+        height: 300px;
+    }
+    .header_image_container>div {
+        width: 250px;
+        height: 300px;
+    }
+    .skill_select_text {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .project {
+        width: 200px;
+        margin: 0px 25px 50px 25px;
+    }
+    .project img {
+        height: 130px;
+    }
+    .project_title {
+        font-size: 15px;
+    }
+    .project_description {
+        font-size: 9px;
+        padding: 5px;
+    }
+    .options_container {
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+    .projectSelect {
+        width: 510px;
+    }
+    .projectSelect>h1 {
+        font-size: 27px;
+    }
+    .projectSelectInf {
+        font-size: 13px;
+    }
+    .tecInfSection>li {
+        font-size: 17px;
+    }
+    .inputRedirect {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contactMe {
+        padding: 5px 10px;
+        transform: translate(-90%, 80%);
+    }
+    .header,
+    .projects_container,
+    .skills_container {
+        width: 90%;
+    }
+    .option {
+        margin: 0px 40px;
+    }
+    .header_textFirst,
+    .header_textThrid {
+        font-size: 10px;
+    }
+    .header_textSecond {
+        font-size: 40px;
+    }
+    .inputRedirectSection {
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .nav_bar {
+        padding: 10px 20px;
+    }
+    .nav_bar>div>input {
+        font-size: 9px;
+        padding: 7px 10px;
+    }
+    .languageSelector {
+        padding: 5px 10px;
+    }
+    .languageSelector>img {
+        width: 15px;
+        height: 15px;
+        border-radius: 0px;
+    }
+    .languageSelector>p {
+        font-size: 10px;
+        margin-right: 10px;
+    }
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px 1fr;
+        justify-items: center;
+        width: 85%;
+    }
+    .header_image_container {
+        width: 250px;
+        grid-row: 1;
+    }
+    .header_text {
+        margin-top: 15px;
+    }
+    .skill_select_text {
+        font-size: 11px;
+    }
+    .option {
+        padding: 10px 0px;
+        font-size: 15px;
+        width: 120px;
+    }
+    .contactMe {
+        padding: 5px;
+        transform: translate(-90%, 60%);
+    }
+    .contactSVG {
+        width: 20px;
+        height: 20px;
+    }
+    .project {
+        width: 170px;
+    }
+    .project img {
+        height: 110px;
+    }
+    .project_title {
+        font-size: 15px;
+    }
+    .project_description {
+        font-size: 8px;
+        padding: 5px;
+    }
+    .projectSelect {
+        width: 460px;
+    }
+    .projectSelect>h1 {
+        font-size: 24px;
+    }
+    .projectSelectInf {
+        font-size: 11px;
+    }
+    .tecInfSection>li {
+        font-size: 15px;
+    }
+    .inputRedirect {
+        font-size: 11px;
+        width: 140px;
+        height: 35px;
+        margin: 10px 0px;
+    }
+    .inputRedirect .contactSVG {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .header_textSecond {
+        font-size: 30px;
+    }
+    .skill_select_text {
+        font-size: 10px;
+    }
+    .option {
+        font-size: 13px;
+    }
+    .project {
+        width: 140px;
+    }
+    .project_title {
+        font-size: 13px;
+    }
+    .project_description {
+        font-size: 7px;
+    }
+    .inputRedirect {
+        width: 110px;
+    }
+    .inputRedirect .contactSVG {
+        margin-right: 7px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .project {
+        width: 110px;
+    }
+    .project_title {
+        font-size: 11.5px;
+    }
+    .project_description {
+        font-size: 6px;
+    }
+    .project img {
+        height: 90px;
+    }
+    .option {
+        margin: 0px 20px;
+        font-size: 11px;
+        width: 90px;
+    }
+    .skill_select_text {
+        font-size: 9px;
+    }
+    .projectSelect {
+        width: 300px;
+    }
+    .projectSelect>h1 {
+        font-size: 20px;
+    }
+    .projectSelectInf {
+        font-size: 9px;
+    }
+    .tecInfSection>li {
+        font-size: 12px;
+    }
+    .inputRedirect {
+        font-size: 11px;
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .header {
+        grid-template-rows: 250px 1fr;
+    }
+    .header_image_container {
+        width: 200px;
+        height: 250px;
+    }
+    .header_image_container>div {
+        width: 200px;
+        height: 250px;
+    }
+}
